@@ -1,5 +1,40 @@
 @import "./styles/example.scss";
 
-#main {
-    color: purple
+#fridge {
+    color: purple;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
+
+#fridge:hover {
+    background-color: aqua;
+}
+
+.hidden{
+    display: none;
+}
+
+.ing-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#oven {
+    color: purple;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
+
+
+#oven:hover {
+    background-color: aqua;
 }
