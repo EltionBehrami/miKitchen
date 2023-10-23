@@ -44,14 +44,19 @@ class Recipe {
             .enter()
             .append('g')
             .attr('class', 'arc')
-            .on("mouseover", function(d){
-                d3.select("#tooltip")
-                .style("left", d3.event.pageX + "px")
-                .style("top", d3.event.pageY + "px")
-                .style("opacity", 1)
-                .select("#value")
-                .text(d.value)
-            })
+            // .on("mouseover", function(d){
+            //     d3.select("#tooltip")
+            //     .style("left", d3.event.pageX + "px")
+            //     .style("top", d3.event.pageY + "px")
+            //     .style("opacity", 1)
+            //     .select("#value")
+            //     .text(d.value)
+            // })
+            // .on("mouseout", function () {
+            //     // Hide the tooltip
+            //     d3.select("#tooltip")
+            //         .style("opacity", 0);
+            // });
 
         // event listeners for animation 
         arc.append('path')
@@ -63,15 +68,22 @@ class Recipe {
                 .style('fill-opacity', 1)
                 .transition().duration(500)
                 .attr('d', hoverArc); 
-
-                
-
+                d3.select("#tooltip")
+                .style("left", d3.event.pageX + "px")
+                .style("top", d3.event.pageY + "px")
+                .style("opacity", 1)
+                .select("#value")
+                .text(d.value)
             })
             .on("mouseout", function(d, i){
+                d3.select("#tooltip")
+                .style("opacity", 0);
+
                 d3.select(this)
                 .style('fill-opacity', 1)
                 .transition().duration(500)
                 .attr('d', path); 
+
             })
 
             // labels on the chart 
