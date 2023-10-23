@@ -31,6 +31,7 @@ class Recipe {
             .append('g')
             .attr('transform', `translate(${width / 2},${height / 2})`);
 
+            // d3 preset color scheme 
         const color = d3.scaleOrdinal()
             .domain(data.map(d => d.label))
             .range(d3.schemeCategory10);
@@ -38,14 +39,19 @@ class Recipe {
             // construct the pie chart with the data
         const pie = d3.pie().value(d => d.value);
 
-        
-
         const arc = svg.selectAll('arc')
             .data(pie(data))
             .enter()
             .append('g')
-            .attr('class', 'arc');
-
+            .attr('class', 'arc')
+            .on("mouseover", function(d){
+                d3.select("#tooltip")
+                .style("left", d3.event.pageX + "px")
+                .style("top", d3.event.pageY + "px")
+                .style("opacity", 1)
+                .select("#value")
+                .text(d.value)
+            })
 
         // event listeners for animation 
         arc.append('path')
@@ -57,6 +63,9 @@ class Recipe {
                 .style('fill-opacity', 1)
                 .transition().duration(500)
                 .attr('d', hoverArc); 
+
+                
+
             })
             .on("mouseout", function(d, i){
                 d3.select(this)

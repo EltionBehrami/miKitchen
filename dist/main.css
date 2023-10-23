@@ -21,10 +21,23 @@
   display: flex;
   justify-content: right;
   align-items: flex-end;
+  background-image: url("/assets/Kitchen furniture set/Fridge_gray_1_close.png");
+  background-color: gray;
 }
 
 #fridge:hover {
   background-color: aqua;
+}
+
+#tooltip {
+  position: absolute;
+  background-color: gray;
+  opacity: 0;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .hidden {
@@ -36,6 +49,9 @@
   justify-content: center;
   align-items: center;
   border-style: solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .ingredients {
@@ -48,10 +64,16 @@
   justify-content: center;
   align-items: center;
   border-style: solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .drawer-page {
   border-style: solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 #drawer {
