@@ -54,6 +54,14 @@ class Oven{
                 pieChartContainer.classList.add('pie-chart-container')
                 recipe.generatePieChart(pieChartContainer)
                 recipeList.append(pieChartContainer)
+
+            let tooltipContainer = document.createElement('div')
+                tooltipContainer.innerHTML = `<p>Tooltip Data</p>
+                <p><span id="value"> value </span></p>`
+                tooltipContainer.classList.add("tooltip")
+                tooltipContainer.setAttribute("id", "tooltip")
+                pieChartContainer.append(tooltipContainer)
+
         })}
         )
         
