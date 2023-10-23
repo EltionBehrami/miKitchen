@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
     <title>miKitchen</title>
 </head>
 
 <body>
     <div id="fridge">Hello from index.html. Something went wrong</div>
 </body>
+
 
 <div id="ing-page" class="hidden">
     <form id="ing-form" class="ingredients-form">
@@ -21,6 +24,7 @@
 
     <div class="ingredients-container">
         <h2>Ingredients List:</h2>
+        <button type="button" id="clearButton">Clear</button>
 
         <ul class="ingredients">
             
@@ -32,12 +36,115 @@
 <div id="oven"> I'm an oven</div>
 
 <div id="recipe-page" class="hidden">
+    <button type="button" id="button">Click Me!</button>
+    <button type="button" id="clearRecipe">Clear</button>
     <div class="recipe-container">
         <h2>Recipe:</h2>
 
-        <p class="recipe"></p>
+        <ul class="recipe"></ul>
 
     </div>
+</div>
+
+<div id="drawer">I'm the recipe drawer</div>
+
+<div id="drawer-page" class="hidden">
+    <div>Diet dropdown</div>
+    <select id="diet" name="diet">
+        <!-- <option value="Select" selected>Select</option> -->
+        <option value="none" selected disabled hidden>Select an Option</option>
+        <option value="balanced">balanced</option>
+        <option value="high-fiber">high-fiber</option>
+        <option value="high-protein">high-protein</option>
+        <option value="low-carb">low-carb</option>
+        <option value="low-fat">low-fat</option>
+        <option value="low-sodium">low-sodium</option>
+      </select>
+    <div>Cuisine dropdown</div>
+    <select id="cuisine" name="cuisine">
+        <!-- <option value="Select" selected>Select</option> -->
+        <option value="none" selected disabled hidden>Select an Option</option>
+        <option value="American">American</option>
+        <option value="Asian">Asian</option>
+        <option value="British">British</option>
+        <option value="Caribbean">Caribbean</option>
+        <option value="Central Europe">Central Europe</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Eastern Europe">Eastern Europe</option>
+        <option value="French">French</option>
+        <option value="Indian">Indian</option>
+        <option value="Italian">Italian</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Kosher">Kosher</option>
+        <option value="Mediterannean">Mediterannean</option>
+        <option value="Middle Eastern">Middle Eastern</option>
+        <option value="Nordic">Nordic</option>
+        <option value="South American">South American</option>
+        <option value="South East Asian">South East Asian</option>
+      </select>
+    <div>Health dropdown</div>
+    <select id="health" name="health">
+        <!-- <option value="Select" selected>Select</option> -->
+        <option value="none" selected disabled hidden>Select an Option</option>
+        <option value="alcohol-free">alcohol-free</option>
+        <option value="celery-free">celery-free</option>
+        <option value="crustacean-free">crustacean-free</option>
+        <option value="dairy-free">dairy-free</option>
+        <option value="egg-free">egg-free</option>
+        <option value="fish-free">fish-free</option>
+        <option value="gluten-free">gluten-free</option>
+        <option value="keto">keto</option>
+        <option value="kidney-friendly">kidney-friendly</option>
+        <option value="low-potassium">low-potassium</option>
+        <option value="low-sugar">low-sugar</option>
+        <option value="mollusk-free">mollusk-free</option>
+        <option value="mustard-free">mustard-free</option>
+        <option value="paleo">paleo</option>
+        <option value="peanut-free">peanut-free</option>
+        <option value="pork-free">pork-free</option>
+        <option value="red-meat-free">red-meat-free</option>
+        <option value="sesame-free">sesame-free</option>
+        <option value="shellfish-free">shellfish-free</option>
+        <option value="soy-free">soy-free</option>
+        <option value="sugar-conscious">sugar-conscious</option>
+        <option value="tree-nut-free">tree-nut-free</option>
+        <option value="vegan">vegan</option>
+        <option value="vegetarian">vegetarian</option>
+        <option value="wheat-free">wheat-free</option>
+      </select>
+      <div>Meal type dropdown</div>
+    <select id="mealType" name="mealType">
+        <option value="none" selected disabled hidden>Select an Option</option>
+        <!-- <option value="Select" selected>Select</option> -->
+        <option value="Dinner">Dinner</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Snack">Snack</option>
+        <option value="Teatime">Teatime</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="low-sodium">low-sodium</option>
+      </select>
+
+      <div>Dish Type dropdown</div>
+    <select id="dishType" name="dishType">
+        <option value="none" selected disabled hidden>Select an Option</option>
+        <!-- <option value="Select" selected>Select</option> -->
+        <option value="Biscuits and cookies">Biscuits and cookies</option>
+        <option value="Bread">Bread</option>
+        <option value="Cereals">Cereals</option>
+        <option value="Condiments and sauces">Condiments and sauces</option>
+        <option value="Desserts">Desserts</option>
+        <option value="Drinks">Drinks</option>
+        <option value="Main course">Main course</option>
+        <option value="Pancake">Pancake</option>
+        <option value="Preps">Preps</option>
+        <option value="Preserve">Preserve</option>
+        <option value="Salad">Salad</option>
+        <option value="Sandwiches">Sandwiches</option>
+        <option value="Side dish">Side dish</option>
+        <option value="Soup">Soup</option>
+        <option value="Starter">Starter</option>
+        <option value="Sweets">Sweets</option>
+      </select>
 </div>
 
 

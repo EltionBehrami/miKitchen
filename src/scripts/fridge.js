@@ -1,16 +1,14 @@
-import Kitchen from "./kitchen";
-
-class Fridge extends Kitchen{
+class Fridge {
 
     constructor(ele) {
-        super()
         this.ele = ele;
         this.ele.innerHTML = "<h1> Fridge</h1>"
         this.ingredientsPage = document.getElementById("ing-page")
         this.ingredientsForm = document.getElementById("ing-form")
         this.ingredientList = document.querySelector('.ingredients');
         this.ingredientItems = ''
-
+        this.button = document.getElementById("clearButton")
+        this.button.addEventListener('click', this.clearIngredients.bind(this))
         this.ele.addEventListener('click', this.handleClick.bind(this))
         this.ingredientsForm.addEventListener('submit', this.addIngredient.bind(this))
         this.ingredientList.addEventListener('click', this.deleteIngredient.bind(this))
@@ -28,6 +26,7 @@ class Fridge extends Kitchen{
     };
 
     //event handler to add to ingredient list 
+
 
     addIngredient(e) {
         e.preventDefault();
@@ -67,6 +66,11 @@ class Fridge extends Kitchen{
             newEle.innerText = item;
             iL.append(newEle);
         });
+    }
+
+    clearIngredients() {
+        while(this.ingredientList.firstChild) this.ingredientList.removeChild(this.ingredientList.firstChild);
+        this.ingredientItems = ""
     }
 
 

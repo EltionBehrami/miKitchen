@@ -4,7 +4,7 @@
     color: purple;
     display: flex;
     justify-content: right;
-    align-items: end;
+    align-items: flex-end;
 }
 
 #fridge:hover {
@@ -19,22 +19,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-style: solid;
+}
+
+.ingredients {
+    list-style: none;
+    border-style: solid;
 }
 
 .recipe-page{
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
+    border-style: solid;
 }
+
+.drawer-page {
+    border-style: solid;
+}
+
+#drawer{
+    border-style: solid;
+    display: flex;
+}
+
 
 #oven {
     color: purple;
     display: flex;
     justify-content: right;
     align-items: end;
+    border-style: solid;
 }
 
 
 #oven:hover {
     background-color: aqua;
 }
+
+
