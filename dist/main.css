@@ -161,13 +161,49 @@ body {
   font-size: larger;
 }
 
-.recipe-page {
-  display: block;
+.recipe-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
   justify-content: center;
   align-items: center;
-  border-style: solid;
-  background-color: gray;
-  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.281);
+}
+
+#recipe-page {
+  display: flex;
+  justify-content: space-between;
+  background-image: url(/src/assets/Kitchen_furniture_set/ingredients_page/open_book.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #ff0000;
+  width: 70%;
+  height: 100%;
+}
+
+.recipe-container {
+  display: flex-column;
+  justify-content: start;
+  margin-top: 5%;
+  margin-left: 15%;
+  color: #7393B3;
+  font-family: cursive;
+  font-size: larger;
+  border: 1px solid #00ff11;
+}
+
+#chart-page {
+  margin-top: 5%;
+  margin-right: 9%;
 }
 
 .drawer-page {
