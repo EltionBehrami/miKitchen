@@ -7,29 +7,42 @@ class Oven{
             this.fridge = fridge
             this.drawer = drawer
             this.ele = ele;
-            // this.ele.innerHTML = "<h1> Oven </h1>"
-            this.recipePage = document.getElementById("recipe-page")
+            this.chart = document.getElementById("chart")
+            this.recipeModal = document.getElementsByClassName("recipe-modal")[0]
             this.recipe = document.querySelector('.recipe');
-            this.ele.addEventListener('click', this.handleClick.bind(this))
+            this.ele.addEventListener('click', this.displayModal.bind(this))
             this.button = document.getElementById("button")
             this.button.addEventListener('click', this.generateRecipe.bind(this))
             this.clearButton = document.getElementById("clearRecipe")
             this.clearButton.addEventListener('click', this.clearRecipes.bind(this))
+            this.closeModalButton = document.getElementById("closeRecipeModal")
+            this.closeModalButton.addEventListener('click', this.closeModal.bind(this));
         }
 
-
-    handleClick() {
-        if (this.recipePage.classList.contains('hidden')) {
-            this.recipePage.classList.remove("hidden");  // Show recipe page 
-            this.recipePage.classList.add("recipe-page");
-        } else {
-            this.recipePage.classList.add('hidden');    // Hide recipe page 
-            this.recipePage.classList.remove("recipe-page");
-        }
+    displayModal() {
+        this.recipeModal.style.display = "flex" // Show the ingredients page
+        debugger
     };
+
+    closeModal() {
+        this.recipeModal.style.display = "none"
+    };
+
+
+    // handleClick() {
+    //     if (this.recipePage.classList.contains('hidden')) {
+    //         this.recipePage.classList.remove("hidden");  // Show recipe page 
+    //         this.recipePage.classList.add("recipe-page");
+    //     } else {
+    //         this.recipePage.classList.add('hidden');    // Hide recipe page 
+    //         this.recipePage.classList.remove("recipe-page");
+    //     }
+    // };
 
     generateRecipe(e) {
         let recipeList = this.recipe;
+        let chartPage = document.getElementById("chart-page")
+        let chartList = this.chart
         debugger
         let queryParams = this.fridge.ingredientItems + this.drawer.searchParams();
         customFetch(queryParams)
@@ -53,7 +66,8 @@ class Oven{
             let pieChartContainer = document.createElement('div')
                 pieChartContainer.classList.add('pie-chart-container')
                 recipe.generatePieChart(pieChartContainer)
-                recipeList.append(pieChartContainer)
+                chartList.append(pieChartContainer)
+                chartPage.append(chartList)
 
             let tooltipContainer = document.createElement('div')
                 tooltipContainer.innerHTML = `<p>Tooltip Data</p>
@@ -70,6 +84,7 @@ class Oven{
 
     clearRecipes() {
         while(this.recipe.firstChild) this.recipe.removeChild(this.recipe.firstChild);
+        while(this.chart.firstChild) this.chart.removeChild(this.chart.firstChild);
     }
 
 };
