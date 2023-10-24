@@ -1,7 +1,7 @@
 class Drawer {
     constructor(ele) {
         this.ele = ele 
-        this.ele.innerHTML = "<h1> Drawer</h1>"
+        // this.ele.innerHTML = "<h1> Drawer</h1>"
         this.drawerPage = document.getElementById("drawer-page")
         this.ele.addEventListener('click', this.handleClick.bind(this))
         this.cuisine = document.getElementById("cuisine")
@@ -9,6 +9,8 @@ class Drawer {
         this.health = document.getElementById("health")
         this.mealType = document.getElementById("mealType")
         this.dishType = document.getElementById("dishType")
+        this.button = document.getElementById("resetButton")
+        this.button.addEventListener('click', this.resetParams.bind(this))
     }
 
     handleClick() {
@@ -42,6 +44,14 @@ class Drawer {
             params += `&dishType=${this.dishType.value}`
         }
         return params
+    }
+
+    resetParams(){
+        this.diet.value = "none"
+        this.cuisine.value = "none"
+        this.health.value = "none"
+        this.mealType.value = "none"
+        this.dishType.value = "none"
     }
 
 
