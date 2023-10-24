@@ -7,7 +7,7 @@ class Oven{
             this.fridge = fridge
             this.drawer = drawer
             this.ele = ele;
-            this.ele.innerHTML = "<h1> Oven </h1>"
+            // this.ele.innerHTML = "<h1> Oven </h1>"
             this.recipePage = document.getElementById("recipe-page")
             this.recipe = document.querySelector('.recipe');
             this.ele.addEventListener('click', this.handleClick.bind(this))

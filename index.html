@@ -12,39 +12,52 @@
 </head>
 
 <body>
-    <div id="oven"> I'm an oven</div>
-    <div id="drawer">I'm the recipe drawer</div>
-    <div id="fridge">Hello from index.html. Something went wrong</div>
-    <div id="sink-cabinet"></div>
-    <div id="sink-top"></div>
-    <div id="sink"></div>
-    <div id="dishwasher"></div>
-    <div id="hood"></div>
-    <div id="cabinet"></div>
-    <div id="cabinetThree"></div>
-    <div id="cabinetTwo"></div>
+    <!-- <div id="first-container">container-1 -->
+        <div id="second-container">
+            <div class="top-container">
+                <div id="hood"></div>
+                <div id="cabinet"></div>
+                <div id="cabinet-two"></div>
+                <div id="cabinet-three"></div> 
+            </div>
+            <div class="bottom-container">
+                <div id="oven"></div>
+                <div id="drawer"></div>
+                <div id="sink-cabinet"></div>
+                <div id="dishwasher"></div>
 
-
-<!-- <div id="tooltip" class="tooltip">
-    <p>Tooltip Data</p>
-    <p><span id="value"> value </span></p>
-</div> -->
-
-
-<div id="ing-page" class="hidden">
-    <form id="ing-form" class="ingredients-form">
-    <input type="text" name="add-ingredient" placeholder="Input ingredients" required>
-            <input type="submit" value="Add Item">
-    </form>
-
-    <div class="ingredients-container">
-        <h2>Ingredients List:</h2>
-        <button type="button" id="clearButton">Clear</button>
-
-        <ul class="ingredients">   
-        </ul>
+            </div>
+        </div>
+    <div id="right-container">
+    <div id="fridge"></div>
     </div>
+
+    <!-- <div id="sink-top">sink top</div> -->
+
+
+
+
+
+
+<div class="ing-modal">
+    <button id="closeIngModal">Close Modal</button>
+    <div id="ing-page">
+        
+
+        <div class="ingredients-container">
+            <h1>Ingredients List:</h1>
+            <form id="ing-form" class="ingredients-form">
+        <input type="text" name="add-ingredient" placeholder="Input ingredients" required>
+                <input type="submit" value="Add Item">
+        </form>
+            <button type="button" id="clearButton">Clear</button>
+            <ul class="ingredients"></ul>
+        </div>
+
+    </div>
+
 </div>
+
 
 
 <div id="recipe-page" class="hidden">
@@ -62,8 +75,8 @@
 
 <div id="drawer-page" class="hidden">
     <div>Diet dropdown</div>
+    <button type="button" id="resetButton">reset</button>
     <select id="diet" name="diet">
-        <!-- <option value="Select" selected>Select</option> -->
         <option value="none" selected disabled hidden>Select an Option</option>
         <option value="balanced">balanced</option>
         <option value="high-fiber">high-fiber</option>
@@ -71,10 +84,9 @@
         <option value="low-carb">low-carb</option>
         <option value="low-fat">low-fat</option>
         <option value="low-sodium">low-sodium</option>
-      </select>
+    </select>
     <div>Cuisine dropdown</div>
     <select id="cuisine" name="cuisine">
-        <!-- <option value="Select" selected>Select</option> -->
         <option value="none" selected disabled hidden>Select an Option</option>
         <option value="American">American</option>
         <option value="Asian">Asian</option>
@@ -93,10 +105,9 @@
         <option value="Nordic">Nordic</option>
         <option value="South American">South American</option>
         <option value="South East Asian">South East Asian</option>
-      </select>
+    </select>
     <div>Health dropdown</div>
     <select id="health" name="health">
-        <!-- <option value="Select" selected>Select</option> -->
         <option value="none" selected disabled hidden>Select an Option</option>
         <option value="alcohol-free">alcohol-free</option>
         <option value="celery-free">celery-free</option>
@@ -123,23 +134,21 @@
         <option value="vegan">vegan</option>
         <option value="vegetarian">vegetarian</option>
         <option value="wheat-free">wheat-free</option>
-      </select>
-      <div>Meal type dropdown</div>
+    </select>
+    <div>Meal type dropdown</div>
     <select id="mealType" name="mealType">
         <option value="none" selected disabled hidden>Select an Option</option>
-        <!-- <option value="Select" selected>Select</option> -->
         <option value="Dinner">Dinner</option>
         <option value="Lunch">Lunch</option>
         <option value="Snack">Snack</option>
         <option value="Teatime">Teatime</option>
         <option value="Breakfast">Breakfast</option>
         <option value="low-sodium">low-sodium</option>
-      </select>
+    </select>
 
-      <div>Dish Type dropdown</div>
+    <div>Dish Type dropdown</div>
     <select id="dishType" name="dishType">
         <option value="none" selected disabled hidden>Select an Option</option>
-        <!-- <option value="Select" selected>Select</option> -->
         <option value="Biscuits and cookies">Biscuits and cookies</option>
         <option value="Bread">Bread</option>
         <option value="Cereals">Cereals</option>
@@ -156,7 +165,7 @@
         <option value="Soup">Soup</option>
         <option value="Starter">Starter</option>
         <option value="Sweets">Sweets</option>
-      </select>
+    </select>
 </div>
 
 </body>

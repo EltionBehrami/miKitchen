@@ -2,32 +2,28 @@ class Fridge {
 
     constructor(ele) {
         this.ele = ele;
-        this.ele.innerHTML = "<h1> Fridge</h1>"
-        this.ingredientsPage = document.getElementById("ing-page")
+        this.ingredientsModal = document.getElementsByClassName("ing-modal")[0]
         this.ingredientsForm = document.getElementById("ing-form")
         this.ingredientList = document.querySelector('.ingredients');
         this.ingredientItems = ''
         this.button = document.getElementById("clearButton")
         this.button.addEventListener('click', this.clearIngredients.bind(this))
-        this.ele.addEventListener('click', this.handleClick.bind(this))
+        this.ele.addEventListener('click', this.displayModal.bind(this))
         this.ingredientsForm.addEventListener('submit', this.addIngredient.bind(this))
         this.ingredientList.addEventListener('click', this.deleteIngredient.bind(this))
+        this.closeModalButton = document.getElementById("closeIngModal")
+        this.closeModalButton.addEventListener('click', this.closeModal.bind(this));
     }
 
-    handleClick() {
-        
-        if (this.ingredientsPage.classList.contains('hidden')) {
-            this.ingredientsPage.classList.remove('hidden'); // Show the ingredients page
-            this.ingredientsPage.classList.add("ing-page");
-        } else {
-            this.ingredientsPage.classList.add('hidden'); // Hide the ingredients page  
-            this.ingredientsPage.classList.remove("ing-page");
-        }
+    displayModal() {
+            this.ingredientsModal.style.display = "flex" // Show the ingredients page
+    };
+
+    closeModal() {
+        this.ingredientsModal.style.display = "none"
     };
 
     //event handler to add to ingredient list 
-
-
     addIngredient(e) {
         e.preventDefault();
         let input = document.querySelector("input[name='add-ingredient']");
@@ -44,8 +40,6 @@ class Fridge {
 
     }
 
-
-     //delete Ingredient 
     
     deleteIngredient(e) {
         e.preventDefault()
