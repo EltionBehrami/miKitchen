@@ -4,6 +4,7 @@ body{
     display: flex;
     justify-content: center;
     background-color: #7393B3;
+    z-index: 1;
 }
 
 #first-container {
@@ -11,11 +12,18 @@ body{
     flex-direction: column;
     // border-style: solid;
     width: 75%;
+    z-index: 1;
 }
 
 #second-container {
     width: 75%;
     // border-style: solid;
+    z-index: 1;
+}
+
+#dishwasher:hover{
+    cursor: pointer;
+    background-image: url("/src/assets/Kitchen_furniture_set/Dishwasher_white_open.png");
 }
 
 
@@ -28,17 +36,32 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 89%;
+    z-index: 1;
+}
+
+#fridge:hover{
+    cursor: pointer;
+    background-image: url("/src/assets/Kitchen_furniture_set/Fridge_gray_2_open.png");
+}
+#oven:hover{
+    cursor: pointer;
+    background-image: url("/src/assets/Kitchen_furniture_set/Stove_open.png");
+}
+#drawer:hover{
+    cursor: pointer;
 }
 
 #right-container{
     width: 25%;
     // border-style: solid;
+    z-index: 1;
 }
 
 .top-container {
     // border: 1px solid red;
     height: 50%;
     display: flex;
+    z-index: 1;
 }
 
 
@@ -46,6 +69,7 @@ body{
     display: flex;
     height: 50%;
     // border: 1px solid green;
+    z-index: 1;
 }
 
 #hood {
@@ -57,10 +81,13 @@ body{
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100%;
+    z-index: 1;
 }
 
+
+
 #oven { 
-    background-image: url("/src/assets/Kitchen_furniture_set/Stove_open.png");
+    background-image: url("/src/assets/Kitchen_furniture_set/Stove_close.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
@@ -68,6 +95,7 @@ body{
     height: 100%;
     width: 25%;
     background-size: 100%;
+    z-index: 1;
 }
 
 #cabinet {
@@ -77,6 +105,7 @@ body{
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100%;
+    z-index: 1;
 }
 
 #cabinet-two {
@@ -86,6 +115,7 @@ body{
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100%;
+    z-index: 1;
 }
 
 #cabinet-three{
@@ -95,6 +125,7 @@ body{
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100%;
+    z-index: 1;
 }
 
 #drawer {
@@ -104,6 +135,7 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100%;
+    z-index: 1;
 }
 
 #dishwasher {
@@ -113,6 +145,7 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100%;
+    z-index: 1;
 }
 
 #sink-cabinet{
@@ -122,6 +155,7 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100%;
+    z-index: 1;
 }
 
 .hidden{
@@ -155,7 +189,7 @@ body{
     position: fixed; 
     justify-content: center;
     align-items: center;
-    z-index: 1; 
+    z-index: 3; 
     width: 100%; 
     height: 100%; 
     overflow: auto; /* Enable scroll */
@@ -181,7 +215,7 @@ body{
     position: fixed; 
     justify-content: center;
     align-items: center;
-    z-index: 1; 
+    z-index: 3; 
     width: 100%; 
     height: 100%; 
     overflow: auto; /* Enable scroll */
@@ -215,6 +249,46 @@ body{
     font-family: cursive;
     font-size: larger;
     border: 1px solid #00ff11;
+
+}
+.drawer-modal{
+    display: none; /* Hidden by default */
+    position: fixed; 
+    justify-content: center;
+    align-items: center;
+    z-index: 3; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; /* Enable scroll */
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.281); 
+}
+
+#drawer-page{
+    // display: flex;
+    // align-items: center;
+    background-image: url(/src/assets/Kitchen_furniture_set/spiral_notepad.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #ff0000;
+    width: 70%; 
+    height: 100%;
+}
+
+.drawer-container {
+    // display: flex-column;
+    margin-top: 7.5%;
+    margin-left: 42.5%;
+    color: #7393B3;
+    font-family: cursive;
+    font-size: larger;
+    border: 1px solid #00ff11;
+    z-index: 1;
 
 }
 
@@ -257,11 +331,86 @@ body{
     opacity: 0;
 }
 
+#microwave-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    height: 100px;
+    margin-left: 528px;
+    margin-top: 405px;
+}
 
+#microwave{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    background-image: url("/src/assets/Kitchen_furniture_set/Microwave.png");
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: right;
+    z-index: 2;
+    // border-style: solid;
+    height: 150px;
+    width: 315px;
 
+}
 
+#sink-top-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    height: 100px;
+    margin-right: 100px;
+    margin-top: 420px;
+}
 
+#sink-top{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    background-image: url("/src/assets/Kitchen_furniture_set/Sink_1.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    z-index: 2;
+    // border-style: solid;
+    height: 150px;
+    width: 315px;
 
+}
+
+#pot-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    height: 100px;
+    margin-right: 100px;
+    margin-top: 420px;
+}
+
+#pot{
+    display: flex;
+    position: absolute;
+    justify-content: left;
+    background-image: url("src/assets/Kitchen_furniture_set/Pot.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+    z-index: 2;
+    border-style: solid;
+    height: 150px;
+    width: 315px;
+
+}
 
 
 
