@@ -39,15 +39,25 @@ class Oven{
     //     }
     // };
 
-    generateRecipe(e) {
+   async generateRecipe(e) {
         let recipeList = this.recipe;
         let chartPage = document.getElementById("chart-page")
         let chartList = this.chart
         debugger
-        let queryParams = this.fridge.ingredientItems + this.drawer.searchParams();
-        customFetch(queryParams)
-        .then(data => {data.hits.forEach(hit => {
-            console.log(hit)
+        if (localStorage.getItem("recipes") === null){
+            let queryParams = this.fridge.ingredientItems + this.drawer.searchParams();
+            await customFetch(queryParams)
+    
+            .then(data => {
+                localStorage.setItem("recipes", JSON.stringify(data))
+            })
+        }
+        // .then(data => {data.hits.forEach(hit => {
+        //     console.log(hit)
+            this.clearRecipes();
+            let recipes = JSON.parse(localStorage.getItem("recipes"))
+            console.log(recipes)
+            let hit = recipes.hits[Math.floor(Math.random() * 20)]
 
             let recipe = new Recipe(hit);
 
@@ -61,7 +71,12 @@ class Oven{
 
             let recipeImage = document.createElement('img');
                 recipeImage.src = hit.recipe.image;
-                recipeList.append(recipeImage);
+                
+            let recipeLink = document.createElement('a')
+                recipeLink.href = hit.recipe.url
+                recipeLink.append(recipeImage)
+                recipeList.append(recipeLink);
+                recipeLink.target = "_blank"
 
             let pieChartContainer = document.createElement('div')
                 pieChartContainer.classList.add('pie-chart-container')
@@ -69,16 +84,18 @@ class Oven{
                 chartList.append(pieChartContainer)
                 chartPage.append(chartList)
 
+            let bubbleChartContainer = document.createElement('div')
+                bubbleChartContainer.classList.add('bubble-chart-container')
+                recipe.generateBubbleChart(bubbleChartContainer)
+                chartList.append(bubbleChartContainer)
+                chartPage.append(chartList)
+
             let tooltipContainer = document.createElement('div')
-                tooltipContainer.innerHTML = `<p>Tooltip Data</p>
+                tooltipContainer.innerHTML = `<p id="macro">label</p>
                 <p><span id="value"> value </span></p>`
                 tooltipContainer.classList.add("tooltip")
                 tooltipContainer.setAttribute("id", "tooltip")
                 pieChartContainer.append(tooltipContainer)
-
-        })}
-        )
-        
 
     }
 

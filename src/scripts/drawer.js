@@ -2,8 +2,9 @@ class Drawer {
     constructor(ele) {
         this.ele = ele 
         // this.ele.innerHTML = "<h1> Drawer</h1>"
+        this.drawerModal = document.getElementsByClassName("drawer-modal")[0]
         this.drawerPage = document.getElementById("drawer-page")
-        this.ele.addEventListener('click', this.handleClick.bind(this))
+        this.ele.addEventListener('click', this.displayModal.bind(this))
         this.cuisine = document.getElementById("cuisine")
         this.diet = document.getElementById("diet")
         this.health = document.getElementById("health")
@@ -11,17 +12,29 @@ class Drawer {
         this.dishType = document.getElementById("dishType")
         this.button = document.getElementById("resetButton")
         this.button.addEventListener('click', this.resetParams.bind(this))
+        this.closeModalButton = document.getElementById("closeDrawerModal")
+        this.closeModalButton.addEventListener('click', this.closeModal.bind(this));
     }
 
-    handleClick() {
-        if (this.drawerPage.classList.contains('hidden')) {
-            this.drawerPage.classList.remove("hidden");  // Show drawer page 
-            this.drawerPage.classList.add("drawer-page");
-        } else {
-            this.drawerPage.classList.add('hidden');    // Hide drawer page 
-            this.drawerPage.classList.remove("drawer-page");
-        }
-    }
+
+    displayModal() {
+        this.drawerModal.style.display = "flex" // Show the ingredients page
+        debugger
+    };
+
+    closeModal() {
+        this.drawerModal.style.display = "none"
+    };
+
+    // handleClick() {
+    //     if (this.drawerPage.classList.contains('hidden')) {
+    //         this.drawerPage.classList.remove("hidden");  // Show drawer page 
+    //         this.drawerPage.classList.add("drawer-page");
+    //     } else {
+    //         this.drawerPage.classList.add('hidden');    // Hide drawer page 
+    //         this.drawerPage.classList.remove("drawer-page");
+    //     }
+    // }
 
     searchParams() {
         let params = ""
