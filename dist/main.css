@@ -156,17 +156,17 @@ body {
 }
 
 #ing-page {
-  display: flex;
+  display: none;
   justify-content: center;
+  position: absolute;
   background-image: url(/src/assets/Kitchen_furniture_set/spiral_notepad.jpeg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%;
-  margin: 15% auto;
-  padding: 20px;
+  background-size: 95%;
   border: 1px solid #ff0000;
-  width: 70%;
+  width: 40%;
   height: 100%;
+  z-index: 4;
 }
 
 .ing-modal {
@@ -211,28 +211,55 @@ body {
 }
 
 #recipe-page {
-  display: flex;
-  justify-content: space-between;
+  display: none;
+  position: absolute;
   background-image: url(/src/assets/Kitchen_furniture_set/ingredients_page/open_book.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 90%;
-  margin: 15% auto;
-  padding: 20px;
+  background-size: 100%;
   border: 1px solid #ff0000;
   width: 70%;
   height: 100%;
+  z-index: 4;
 }
 
 .recipe-container {
   display: flex-column;
-  justify-content: start;
-  margin-top: 5%;
-  margin-left: 15%;
+  align-items: center;
   color: #7393B3;
   font-family: cursive;
   font-size: larger;
   border: 1px solid #00ff11;
+  width: 50%;
+}
+
+.pie-chart-container {
+  display: flex;
+  position: inherit;
+  border: 1px solid #ff0000;
+  width: 75%;
+  height: 50%;
+}
+
+#chart-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+}
+
+#chart {
+  border: 1px solid #00ff11;
+  height: 100%;
+  width: 100%;
+}
+
+.bubble-chart-container {
+  margin-top: 25%;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #00ffff;
 }
 
 .drawer-modal {
@@ -251,15 +278,16 @@ body {
 }
 
 #drawer-page {
+  display: none;
+  position: absolute;
   background-image: url(/src/assets/Kitchen_furniture_set/spiral_notepad.jpeg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%;
-  margin: 15% auto;
-  padding: 20px;
+  background-size: 95%;
   border: 1px solid #ff0000;
-  width: 70%;
+  width: 40%;
   height: 100%;
+  z-index: 4;
 }
 
 .drawer-container {
@@ -270,11 +298,6 @@ body {
   font-size: larger;
   border: 1px solid #00ff11;
   z-index: 1;
-}
-
-#chart-page {
-  margin-top: 5%;
-  margin-right: 9%;
 }
 
 .drawer-page {
@@ -348,27 +371,60 @@ body {
 }
 
 #pot-container {
-  display: flex;
+  display: flex-column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   position: absolute;
   z-index: 2;
   width: 150px;
   height: 100px;
-  margin-right: 100px;
-  margin-top: 420px;
+  margin-right: 1720px;
+  margin-top: 400px;
 }
 
 #pot {
   display: flex;
-  position: absolute;
+  position: relative;
   justify-content: left;
-  background-image: url("src/assets/Kitchen_furniture_set/Pot.png");
+  background-image: url("/src/assets/Kitchen_furniture_set/Pot.png");
   background-repeat: no-repeat;
-  background-size: 75%;
-  background-position: center;
+  background-size: 35%;
+  background-position: 92% 48%;
   z-index: 2;
-  border-style: solid;
   height: 150px;
-  width: 315px;
+  width: 400px;
+}
+
+#countertop {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  width: 350px;
+  height: 100px;
+  margin-right: 750px;
+  margin-top: 400px;
+}
+
+#mug {
+  display: flex;
+  position: relative;
+  background-image: url("/src/assets/Kitchen_furniture_set/Mug_blue.png");
+  background-repeat: no-repeat;
+  background-size: 25%;
+  background-position: 0% 63%;
+  z-index: 2;
+  height: 150px;
+  width: 400px;
+}
+
+#kettle {
+  display: flex;
+  position: relative;
+  background-image: url("/src/assets/Kitchen_furniture_set/Kettle_1.png");
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-position: 92% 48%;
+  z-index: 2;
+  height: 150px;
+  width: 400px;
 }
