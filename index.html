@@ -24,6 +24,11 @@
     <div id="pot-container">
         <div id="pot"></div>
     </div>
+
+    <div id="countertop">
+        <div id="kettle"></div>
+        <div id="mug"></div>
+    </div>
     
     <!-- <div id="first-container">container-1 -->
         <div id="second-container">
@@ -50,41 +55,46 @@
 
 <div class="ing-modal">
     <button id="closeIngModal">Close Modal</button>
-    <div id="ing-page">
-        <div class="ingredients-container">
-            <h1>Ingredients List:</h1>
-            <form id="ing-form" class="ingredients-form">
-        <input type="text" name="add-ingredient" placeholder="Input ingredients" required>
-                <input type="submit" value="Add Item">
-        </form>
-            <button type="button" id="clearButton">Clear</button>
-            <ul class="ingredients"></ul>
-        </div>
 
+</div>
+
+<div id="ing-page">
+    <div class="ingredients-container">
+        <h1>Ingredients List:</h1>
+        <form id="ing-form" class="ingredients-form">
+    <input type="text" name="add-ingredient" placeholder="Input ingredients" required>
+            <input type="submit" value="Add Item">
+    </form>
+        <button type="button" id="clearButton">Clear</button>
+        <ul class="ingredients"></ul>
     </div>
 
 </div>
 
 <div class="recipe-modal">
-    <button id="closeRecipeModal">Close Modal</button>
-    <div id="recipe-page">
-        <div class="recipe-container">
-            <button type="button" id="button">Click Me!</button>
-            <button type="button" id="clearRecipe">Clear</button>
-            <h2>Recipe:</h2>
-            <ul class="recipe"></ul>
-        </div>
-        <div id="chart-page">
-            <ul id="chart">  
-            </ul>
-        </div>
-
-    </div>
+    
 </div>
 
+<div id="recipe-page">
+    <div class="recipe-container">
+        <button type="button" id="button">Click Me!</button>
+        <button type="button" id="clearRecipe">Clear</button>
+        <ul class="recipe"></ul>
+    </div>
+    <div id="chart-page">
+        
+        <ul id="chart">  
+        </ul>
+    </div>
+</div> 
 
-<div class="drawer-modal">
-    <button id="closeDrawerModal">Close Modal</button>
+<!-- <button id="closeRecipeModal">Close Modal</button> -->
+
+
+
+
+<div class="drawer-modal"> </div>
+    <!-- <button id="closeDrawerModal">Close Modal</button> -->
     <div id="drawer-page">
         <div class="drawer-container">
             <div>Diet dropdown</div>
@@ -181,7 +191,7 @@
     </select>
         </div>
     </div>
-</div>
+
 
 
 

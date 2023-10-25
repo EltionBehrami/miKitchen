@@ -7,17 +7,9 @@ class Recipe {
         this.carbs = Math.floor(obj.recipe.totalNutrients.CHOCDF.quantity)
         this.fats = Math.floor(obj.recipe.totalNutrients.FAT.quantity) 
 
-
         this.nutrients = []
         Object.keys(obj.recipe.totalNutrients).forEach((key) => 
         this.nutrients.push({name: key, value: obj.recipe.totalNutrients[key].quantity}))
-
-        console.log(this)
-        
-        
-        // {this[key] = obj.recipe.totalNutrients[key].quantity})
-
-        debugger
     }
 
 
@@ -103,11 +95,12 @@ class Recipe {
         const group = d => d.name.split(".")[1]; // "util" of "flare.util.Strings"
         const names = d => name(d).split(/(?=[A-Z][a-z])|\s+/g); // ["Legend", "Item"] of "flare.vis.legend.LegendItems"
 
+
     // Specify the number format for values.
         const format = d3.format(",d");
 
     // Create a categorical color scale.
-        const color = d3.scaleOrdinal(d3.schemeTableau10);
+        const color = d3.scaleOrdinal(["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"]);
 
     // Create the pack layout.
         const pack = d3.pack()
@@ -116,55 +109,59 @@ class Recipe {
 
     // Compute the hierarchy from the (flat) data; expose the values
     // for each node; lastly apply the pack layout.
-    const root = pack(d3.hierarchy({children: this.nutrients})
-        .sum(d => d.value));
+        const root = pack(d3.hierarchy({children: this.nutrients})
+            .sum(d => d.value));
 
-  // Create the SVG container.
-  const svg = d3.select(container)
-            .append('svg')
-            .attr("width", width)
-            .attr("height", height)
-            .attr("viewBox", [-margin, -margin, width, height])
-            .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif;")
-            .attr("text-anchor", "middle");
+    // Create the SVG container.
+        const svg = d3.select(container)
+                .append('svg')
+                .attr("width", width)
+                .attr("height", height)
+                .attr("viewBox", [-margin, -margin, width, height])
+                .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif;")
+                .attr("text-anchor", "middle");
 
-  // Place each (leaf) node according to the layout’s x and y values.
-    const node = svg.append("g")
-        .selectAll()
-        .data(root.leaves())
-        .enter().append("g")
-        .attr("transform", d => `translate(${d.x},${d.y})`);
+    // Place each (leaf) node according to the layout’s x and y values.
+        const node = svg.append("g")
+            .selectAll()
+            .data(root.leaves())
+            .enter().append("g")
+            .attr("transform", d => `translate(${d.x},${d.y})`);
 
-  // Add a title.
-    node.append("title")
-        .text(d => `${d.data.id}\n${format(d.value)}`);
+    // Add a title.
+        node.append("title")
+            .text(d => `${d.data.id}\n${format(d.value)}`);
 
-  // Add a filled circle.
-    node.append("circle")
-        .attr("fill-opacity", 0.7)
-        .attr("fill", d => color(group(d.data)))
-        .attr("r", d => d.r);
+    // Add a filled circle.
+        // node.append("circle")
+        //     .attr("fill-opacity", 0.7)
+        //     .attr("fill", d => color(group(d.data)))
+        //     .attr("r", d => d.r);
 
-  // Add a label.
-    const text = node.append("text")
-        .attr("clip-path", d => `circle(${d.r})`);
+        node.append("circle")
+        .attr("r", function(d) { return d.r; })
+        .style("fill", function(d, i) { return color(i); });
 
-  // Add a tspan for each CamelCase-separated word.
-    text.selectAll()
-    .data(d => names(d.data))
-    .enter().append("tspan")
-        .attr("x", 0)
-        .attr("y", (d, i, nodes) => `${i - nodes.length / 2 + 0.35}em`)
-        .text(d => d);
+    // Add a label.
+        const text = node.append("text")
+            .attr("clip-path", d => `circle(${d.r})`);
 
-  // Add a tspan for the node’s value.
-    text.append("tspan")
-        .attr("x", 0)
-        .attr("y", d => `${names(d.data).length / 2 + 0.35}em`)
-        .attr("fill-opacity", 0.7)
-        .text(d => format(d.value));
+    // Add a tspan for each CamelCase-separated word.
+        text.selectAll()
+        .data(d => names(d.data))
+        .enter().append("tspan")
+            .attr("x", 0)
+            .attr("y", (d, i, nodes) => `${i - nodes.length / 2 + 0.35}em`)
+            .text(d => d);
 
-    return Object.assign(svg.node(), {scales: {color}});
+    // Add a tspan for the node’s value.
+        text.append("tspan")
+            .attr("x", 0)
+            .attr("y", d => `${names(d.data).length / 2 + 0.35}em`)
+            .attr("fill-opacity", 0.7)
+            .text(d => format(d.value));
+
+        return Object.assign(svg.node(), {scales: {color}});
 }
 }
 

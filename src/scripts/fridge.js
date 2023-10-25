@@ -3,6 +3,8 @@ class Fridge {
     constructor(ele) {
         this.ele = ele;
         this.ingredientsModal = document.getElementsByClassName("ing-modal")[0]
+        this.ingredientsModal.addEventListener('click', this.closeModal.bind(this));
+        this.ingredientsPage = document.getElementById("ing-page")
         this.ingredientsForm = document.getElementById("ing-form")
         this.ingredientList = document.querySelector('.ingredients');
         this.ingredientItems = ''
@@ -17,10 +19,12 @@ class Fridge {
 
     displayModal() {
             this.ingredientsModal.style.display = "flex" // Show the ingredients page
+            this.ingredientsPage.style.display = "flex"
     };
 
     closeModal() {
         this.ingredientsModal.style.display = "none"
+        this.ingredientsPage.style.display = "none"
     };
 
     //event handler to add to ingredient list 
@@ -66,13 +70,6 @@ class Fridge {
         while(this.ingredientList.firstChild) this.ingredientList.removeChild(this.ingredientList.firstChild);
         this.ingredientItems = ""
     }
-
-
-
-
-
-
-
 }
 
 export default Fridge;

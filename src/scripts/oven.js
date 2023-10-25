@@ -9,59 +9,52 @@ class Oven{
             this.ele = ele;
             this.chart = document.getElementById("chart")
             this.recipeModal = document.getElementsByClassName("recipe-modal")[0]
+            this.recipeModal.addEventListener('click', this.closeModal.bind(this));
+            this.recipePage = document.getElementById("recipe-page")
             this.recipe = document.querySelector('.recipe');
             this.ele.addEventListener('click', this.displayModal.bind(this))
             this.button = document.getElementById("button")
             this.button.addEventListener('click', this.generateRecipe.bind(this))
             this.clearButton = document.getElementById("clearRecipe")
             this.clearButton.addEventListener('click', this.clearRecipes.bind(this))
-            this.closeModalButton = document.getElementById("closeRecipeModal")
-            this.closeModalButton.addEventListener('click', this.closeModal.bind(this));
+            // this.closeModalButton = document.getElementById("closeRecipeModal")
+            // this.closeModalButton.addEventListener('click', this.closeModal.bind(this));
         }
 
     displayModal() {
         this.recipeModal.style.display = "flex" // Show the ingredients page
+        this.recipePage.style.display = "flex"
         debugger
     };
 
     closeModal() {
         this.recipeModal.style.display = "none"
+        this.recipePage.style.display = "none"
     };
 
 
-    // handleClick() {
-    //     if (this.recipePage.classList.contains('hidden')) {
-    //         this.recipePage.classList.remove("hidden");  // Show recipe page 
-    //         this.recipePage.classList.add("recipe-page");
-    //     } else {
-    //         this.recipePage.classList.add('hidden');    // Hide recipe page 
-    //         this.recipePage.classList.remove("recipe-page");
-    //     }
-    // };
-
-   async generateRecipe(e) {
+    async generateRecipe(e) {
         let recipeList = this.recipe;
         let chartPage = document.getElementById("chart-page")
         let chartList = this.chart
         debugger
-        if (localStorage.getItem("recipes") === null){
+        this.clearRecipes();
+
             let queryParams = this.fridge.ingredientItems + this.drawer.searchParams();
             await customFetch(queryParams)
-    
             .then(data => {
                 localStorage.setItem("recipes", JSON.stringify(data))
             })
-        }
-        // .then(data => {data.hits.forEach(hit => {
-        //     console.log(hit)
-            this.clearRecipes();
+
+        
             let recipes = JSON.parse(localStorage.getItem("recipes"))
             console.log(recipes)
             let hit = recipes.hits[Math.floor(Math.random() * 20)]
-
+            debugger
             let recipe = new Recipe(hit);
 
-            let recipeItem = document.createElement('li');
+            // let recipeItem = document.createElement('li');
+            let recipeItem = document.createElement('h1');
                 recipeItem.innerText = recipe.label;
                 recipeList.append(recipeItem);
 
@@ -81,7 +74,7 @@ class Oven{
             let pieChartContainer = document.createElement('div')
                 pieChartContainer.classList.add('pie-chart-container')
                 recipe.generatePieChart(pieChartContainer)
-                chartList.append(pieChartContainer)
+                recipeList.append(pieChartContainer)
                 chartPage.append(chartList)
 
             let bubbleChartContainer = document.createElement('div')
@@ -89,6 +82,7 @@ class Oven{
                 recipe.generateBubbleChart(bubbleChartContainer)
                 chartList.append(bubbleChartContainer)
                 chartPage.append(chartList)
+
 
             let tooltipContainer = document.createElement('div')
                 tooltipContainer.innerHTML = `<p id="macro">label</p>
