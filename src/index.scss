@@ -122,7 +122,7 @@ body{
 #cabinet-three{
     // border-style: solid;
     width: 25%;
-    background-image: url("/src/assets/Kitchen_furniture_set/Cupboard_white_1.png");
+    background-image: url("../src/assets/Kitchen_furniture_set/Cupboard_white_1.png");
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100%;
@@ -132,7 +132,7 @@ body{
 #drawer {
     // border-style: solid;
     width: 25%;
-    background-image: url("/src/assets/Kitchen_furniture_set/Cabinet_white_2.png");
+    background-image: url("../src/assets/Kitchen_furniture_set/Cabinet_white_2.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100%;
@@ -142,7 +142,7 @@ body{
 #dishwasher {
     // border-style: solid;
     width: 25%;
-    background-image: url("/src/assets/Kitchen_furniture_set/Dishwasher_white_close.png");
+    background-image: url("../src/assets/Kitchen_furniture_set/Dishwasher_white_close.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100%;
@@ -152,7 +152,7 @@ body{
 #sink-cabinet{
     // border-style: solid;
     width: 25%;
-    background-image: url("/src/assets/Kitchen_furniture_set/Cabinet_white_1.png");
+    background-image: url("../src/assets/Kitchen_furniture_set/Cabinet_white_1.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100%;
@@ -174,7 +174,7 @@ body{
     display: none;
     justify-content: center;
     position: absolute;
-    background-image: url(/src/assets/Kitchen_furniture_set/spiral_notepad.jpeg);
+    background-image: url("../src/assets/Kitchen_furniture_set/spiral_notepad.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 95%;
@@ -261,7 +261,7 @@ body{
 #recipe-page{
     display: none;
     position: absolute;
-    background-image: url(/src/assets/Kitchen_furniture_set/ingredients_page/open_book.png);
+    background-image: url("../src/assets/Kitchen_furniture_set/ingredients_page/open_book.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -383,7 +383,7 @@ body{
     position: absolute;
     // display: flex;
     align-items: center;
-    background-image: url(/src/assets/Kitchen_furniture_set/spiral_notepad.jpeg);
+    background-image: url("../src/assets/Kitchen_furniture_set/spiral_notepad.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 95%;
@@ -434,7 +434,7 @@ body{
     display: flex;
     position: absolute;
     justify-content: center;
-    background-image: url("/src/assets/Kitchen_furniture_set/Microwave.png");
+    background-image: url("../src/assets/Kitchen_furniture_set/Microwave.png");
     background-repeat: no-repeat;
     background-size: 55%;
     background-position: right;
@@ -460,7 +460,7 @@ body{
     display: flex;
     position: absolute;
     justify-content: center;
-    background-image: url("/src/assets/Kitchen_furniture_set/Sink_1.png");
+    background-image: url("../src/assets/Kitchen_furniture_set/Sink_1.png");
     background-repeat: no-repeat;
     background-size: 75%;
     background-position: center;
@@ -488,7 +488,7 @@ body{
     // position: absolute;
     // justify-content: center;
     z-index: 2;
-    background-image: url("/src/assets/github-logo.png");
+    background-image: url("../src/assets/github-logo.png");
     background-repeat: no-repeat;
     background-size: 25%;
     background-position: center;
@@ -517,7 +517,7 @@ body{
     // border-style: solid;
     height: 150px;
     width: 315px;
-    background-image: url("/src/assets/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930587_72.png");
+    background-image: url("../src/assets/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930587_72.png");
     background-repeat: no-repeat;
     background-size: 38%;
     background-position: center;
@@ -540,7 +540,7 @@ body{
     display: flex;
     position: relative;
     justify-content: left;
-    background-image: url("/src/assets/Kitchen_furniture_set/Pot.png");
+    background-image: url("../src/assets/Kitchen_furniture_set/Pot.png");
     background-repeat: no-repeat;
     background-size: 35%;
     background-position: 92% 48%;
@@ -566,7 +566,7 @@ body{
     display: flex;
     position: relative;
     // justify-content: left;
-    background-image: url("/src/assets/Kitchen_furniture_set/Mug_blue.png");
+    background-image: url("../src/assets/Kitchen_furniture_set/Mug_blue.png");
     background-repeat: no-repeat;
     background-size: 25%;
     background-position:  0% 63%;
@@ -581,7 +581,7 @@ body{
     display: flex;
     position: relative;
     // justify-content: left;
-    background-image: url("/src/assets/Kitchen_furniture_set/Kettle_1.png");
+    background-image: url("../src/assets/Kitchen_furniture_set/Kettle_1.png");
     background-repeat: no-repeat;
     background-size: 45%;
     background-position:  92% 48%;
