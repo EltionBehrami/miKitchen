@@ -22,14 +22,14 @@ body {
 
 #dishwasher:hover {
   cursor: pointer;
-  background-image: url("/src/assets/Kitchen_furniture_set/Dishwasher_white_open.png");
+  background-image: url("../src/assets/Kitchen_furniture_set/Dishwasher_white_open.png");
 }
 
 #fridge {
   height: 857px;
   width: 100%;
   margin-right: 5px;
-  background-image: url("/src/assets/Kitchen_furniture_set/Fridge_gray_2_open_1.png");
+  background-image: url("../src/assets/Kitchen_furniture_set/Fridge_gray_2_open_1.png");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 89%;
@@ -38,12 +38,12 @@ body {
 
 #fridge:hover {
   cursor: pointer;
-  background-image: url("/src/assets/Kitchen_furniture_set/Fridge_gray_2_open.png");
+  background-image: url("../src/assets/Kitchen_furniture_set/Fridge_gray_2_open.png");
 }
 
 #oven:hover {
   cursor: pointer;
-  background-image: url("/src/assets/Kitchen_furniture_set/Stove_open.png");
+  background-image: url("../src/assets/Kitchen_furniture_set/Stove_open.png");
 }
 
 #drawer:hover {
@@ -71,7 +71,7 @@ body {
   height: 100%;
   width: 25%;
   margin-right: 5px;
-  background-image: url("/src/assets/Kitchen_furniture_set/Range_hood_1.png");
+  background-image: url("../src/assets/Kitchen_furniture_set/Range_hood_1.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
@@ -79,7 +79,7 @@ body {
 }
 
 #oven {
-  background-image: url("/src/assets/Kitchen_furniture_set/Stove_close.png");
+  background-image: url("../src/assets/Kitchen_furniture_set/Stove_close.png");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -92,7 +92,7 @@ body {
 
 #cabinet {
   width: 25%;
-  background-image: url("/src/assets/Kitchen_furniture_set/Cupboard_white_1.png");
+  background-image: url("../src/assets/Kitchen_furniture_set/Cupboard_white_1.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
@@ -101,7 +101,7 @@ body {
 
 #cabinet-two {
   width: 25%;
-  background-image: url("/src/assets/Kitchen_furniture_set/Cupboard_white_1.png");
+  background-image: url("../src/assets/Kitchen_furniture_set/Cupboard_white_1.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
@@ -282,6 +282,22 @@ body {
 
 #clearRecipe {
   margin-left: 50px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+}
+
+#clearButton {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+}
+
+#add-ingredient {
   background-color: #fff;
   color: #333;
   border: 1px solid #ccc;
