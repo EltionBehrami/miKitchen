@@ -12,12 +12,12 @@ In miKitchen, users will be able to:
   
 - Refine their recipe choices by diet, cuisine, health restrictions, and more.
 
-![drawer page]
+![drawer page](./.....)
 
   
 - Click on the oven to open up a cookbook where users can finally generate a recipe based on the input paramters. On generation, the user is presented with a random recipe
 
-![recipe page] 
+![recipe page](./....) 
 
   
 - When finished, users can click on the dishwasher to start from scratch.
@@ -40,43 +40,6 @@ This project will be implemented with the following technologies:
 - Edamam Recipe Search API
 - D3 Data Visualization Library
 
-## Development Schedule
-
-### Thursday (Day 1): Project Setup and Learning API
-- Set up the project, create a GitHub repository, and configure the development environment (Webpack, VS Code).
-- Learn how to use the Edamam API, review DOM manipulation, event handling, and fetch.
-- Study solutions to relevant projects (AJAX Twitter, Vanilla DOM, Browser Tic Tac Toe).
-
-### Friday (Day 2): Implementing Fridge Feature
-- Begin writing code to allow users to input ingredients by clicking on the fridge.
-- Continue developing the fridge feature with minimal styling and a focus on functionality.
-- Plan out the desired styling.
-
-### Saturday (Day 3): Implementing Oven Feature
-- Start building the oven feature to generate recipes based on the selected ingredients.
-- Continue developing the oven feature with minimal styling and a focus on functionality.
-- Plan out the desired styling.
-
-### Sunday (Day 4): Recipe Refinement Feature and Data Visualization Planning
-- Design and implement the "Recipe Drawer" feature for refining recipes.
-- Research data visualization and plan its implementation.
-- Explore UI/UX design options for the recipe drawer.
-- Continue planning data visualization.
-
-### Monday (Day 5): Detailed Styling and Asset Integration
-- Dedicate time to styling the kitchen with more detailed CSS.
-- Begin searching for kitchen art assets online.
-- Continue with detailed styling, ensuring hover and click functionalities work with new art assets.
-- Extend the search for kitchen art assets.
-
-### Tuesday (Day 6): Detailed Styling and Data Visualization Implementation
-- Focus on detailed styling, refining the visual aspects of the kitchen environment.
-- Continue searching for kitchen art assets.
-- Implement data visualization features, integrating them into the project.
-
-### Wednesday (Day 7): Final Styling and Testing
-- Finalize the styling to ensure your kitchen environment looks polished.
-- Perform thorough testing, including testing the recipe refinement and data visualization features, and address any last-minute issues.
 
 ## Bonus Features
 
