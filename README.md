@@ -12,12 +12,68 @@ In miKitchen, users will be able to:
   
 - Refine their recipe choices by diet, cuisine, health restrictions, and more.
 
-![drawer page](./.....)
+![drawer page](./src/assets/drawerPage.png)
 
   
 - Click on the oven to open up a cookbook where users can finally generate a recipe based on the input paramters. On generation, the user is presented with a random recipe
 
-![recipe page](./....) 
+![recipe page](./src/assets/recipePage.png) 
+
+```
+async generateRecipe(e) {
+        let recipeList = this.recipe;
+        let chartPage = document.getElementById("chart-page")
+        let chartList = this.chart
+        this.clearRecipes();
+
+            let queryParams = this.fridge.ingredientItems + this.drawer.searchParams();
+            await customFetch(queryParams)
+            .then(data => {
+                localStorage.setItem("recipes", JSON.stringify(data))
+            })
+
+            let recipes = JSON.parse(localStorage.getItem("recipes"))
+            console.log(recipes)
+            let hit = recipes.hits[Math.floor(Math.random() * 20)]
+            let recipe = new Recipe(hit);
+
+            let recipeItem = document.createElement('h1');
+                recipeItem.innerText = recipe.label;
+                recipeList.append(recipeItem);
+
+            let recipeImage = document.createElement('img');
+                recipeImage.src = hit.recipe.image;
+                
+            let recipeLink = document.createElement('a')
+                recipeLink.href = hit.recipe.url
+                recipeLink.append(recipeImage)
+                recipeList.append(recipeLink);
+                recipeLink.target = "_blank"
+
+            let pieChartContainer = document.createElement('div')
+                pieChartContainer.classList.add('pie-chart-container')
+                recipe.generatePieChart(pieChartContainer)
+                recipeList.append(pieChartContainer)
+
+            let bubbleHeading = document.createElement("h1")
+                bubbleHeading.innerText = "Nutrient Breakdown"
+                chartList.append(bubbleHeading)
+
+            let bubbleChartContainer = document.createElement('div')
+                bubbleChartContainer.classList.add('bubble-chart-container')
+                recipe.generateBubbleChart(bubbleChartContainer)
+                chartList.append(bubbleChartContainer)
+                chartPage.append(chartList)
+
+            let tooltipContainer = document.createElement('div')
+                tooltipContainer.innerHTML = `<p id="macro">label</p>
+                <p><span id="value"> value </span></p>`
+                tooltipContainer.classList.add("tooltip")
+                tooltipContainer.setAttribute("id", "tooltip")
+                pieChartContainer.append(tooltipContainer)
+
+    }
+```
 
   
 - When finished, users can click on the dishwasher to start from scratch.
