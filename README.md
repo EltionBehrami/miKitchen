@@ -19,8 +19,7 @@ In miKitchen, users will be able to:
 
 ![recipe page](./src/assets/recipePage.png) 
 
-```
-async generateRecipe(e) {
+``` async generateRecipe(e) {
         let recipeList = this.recipe;
         let chartPage = document.getElementById("chart-page")
         let chartList = this.chart
@@ -72,8 +71,7 @@ async generateRecipe(e) {
                 tooltipContainer.setAttribute("id", "tooltip")
                 pieChartContainer.append(tooltipContainer)
 
-    }
-```
+    } ```
 
   
 - When finished, users can click on the dishwasher to start from scratch.
