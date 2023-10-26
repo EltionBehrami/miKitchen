@@ -7,13 +7,25 @@
 In miKitchen, users will be able to:
 
 - Click on the fridge to select ingredients. This feature provides a practical way to simulate the process of gathering ingredients for a recipe.
-- Refine their recipe choices by diet, cuisine, allergies, and more.
-- Click on the stove to generate a recipe based on the selected ingredients.
-- Discover new dishes and cooking ideas while seeing the macronutrient breakdowns of the recipe. This feature empowers users to make informed and healthy culinary choices.
+
+![fridge_page](./.......) 
+  
+- Refine their recipe choices by diet, cuisine, health restrictions, and more.
+
+![drawer page]
+
+  
+- Click on the oven to open up a cookbook where users can finally generate a recipe based on the input paramters. 
+
+![recipe page] 
+
+  
+- When finished, users can click on the dishwasher to start from scratch.
+
 
 In addition, this project will include:
 
-- A production README
+- This production README
 - Social media links
 
 ## Wireframe 
@@ -26,6 +38,7 @@ This project will be implemented with the following technologies:
 - JavaScript: The core language used to implement the interactive functionality.
 - HTML/CSS: To create the user interface and layout of the 2D kitchen.
 - Edamam Recipe Search API
+- D3 Data Visualization Library
 
 ## Development Schedule
 
