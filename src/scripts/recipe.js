@@ -2,7 +2,7 @@ class Recipe {
     constructor(obj) {
         this.label = obj.recipe.label 
         this.img = obj.recipe.image 
-        this.calories = Math.floor(obj.recipe.calories / 1.5) + " calories"
+        this.calories = Math.floor(obj.recipe.calories) + " calories"
         this.protein = Math.floor(obj.recipe.totalNutrients.PROCNT.quantity)
         this.carbs = Math.floor(obj.recipe.totalNutrients.CHOCDF.quantity)
         this.fats = Math.floor(obj.recipe.totalNutrients.FAT.quantity) 
