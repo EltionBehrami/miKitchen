@@ -248,6 +248,25 @@ body{
     width: 50%; 
 }
 
+.recipe{
+    display: flex-column;
+    justify-content: center;
+    align-items: center;
+    // position: absolute;
+    margin-left: 20%;
+}
+
+#button{
+    // display: flex;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#clearRecipe{
+    // display: flex;
+    margin-left: 50px;
+}
+
 .pie-chart-container{
     display: flex;
     position: inherit;
@@ -267,6 +286,14 @@ body{
     border: 1px solid #00ff11;
     height: 100%;
     width: 100%;
+    // margin-right: 20%;
+}
+
+.chart{
+    display: flex-column;
+    justify-content: center;
+    align-items: center;
+    // margin-top: 20%;
 }
 
 .bubble-chart-container{
@@ -274,6 +301,7 @@ body{
     height: 100%;
     width: 100%;
     border: 1px solid #00ffff;
+    
 }
 .drawer-modal{
     display: none; /* Hidden by default */
@@ -305,9 +333,11 @@ body{
 }
 
 .drawer-container {
-    // display: flex-column;
-    margin-top: 7.5%;
-    margin-left: 42.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin-top: 7.5%;
+    // margin-left: 42.5%;
     color: #7393B3;
     font-family: cursive;
     font-size: larger;
@@ -316,38 +346,6 @@ body{
 
 }
 
-
-
-// .pie-chart-container > g {
-//     border: px solid #00ff1a;
-// }
-
-
-
-
-// g{
-//     border: 1px solid #002aff;
-    
-// }
-
-
-
-// .recipe-page{
-//     display: block;
-//     justify-content: center;
-//     align-items: center;
-//     border-style: solid;
-//     background-color: gray;
-//     position: absolute;
-// }
-
-.drawer-page {
-    border-style: solid;
-    background-color: gray;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}
 
 
 #tooltip {
@@ -482,6 +480,10 @@ body{
     width: 400px;
 
 }
+
+
+
+
 
 
 
