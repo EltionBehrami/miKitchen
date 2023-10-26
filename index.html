@@ -8,6 +8,7 @@
     <script src="./dist/main.js"></script>
     <script src='https://d3js.org/d3.v4.min.js'></script>
     <script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+    <link rel="icon" type="image/png" href="/src/assets/favicon.ico">
     <title>miKitchen</title>
 </head>
 
@@ -28,6 +29,16 @@
     <div id="countertop">
         <div id="kettle"></div>
         <div id="mug"></div>
+    </div>
+
+    <div id="git-container">
+        <a href="https://github.com/EltionBehrami" target="_blank">
+        <div id="git"></div>
+        </a>
+    </div>
+
+    <div id="linkedin-container">
+        <div id="linkedin"></div>
     </div>
     
     <!-- <div id="first-container">container-1 -->
@@ -70,6 +81,30 @@
     </div>
 
 </div>
+<div class="user-modal">
+
+</div>
+
+<div id="user-page">
+    <p> <h2>Welcome to miKitchen</h2>
+
+        <h3>Explore, Cook, and Learn</h3>
+
+        <p>miKitchen is your interactive kitchen companion. Get ready to embark on a culinary adventure, experiment with new recipes, and discover the world of cooking and nutrition.</p>
+
+        <h3>Getting Started:</h3>
+
+        <ol>
+            <li><strong>Fridge:</strong> Click on the fridge to input your ingredients. Simply type ingredients into the notepad, then click "Add Ingredient" These ingredients will be used in recipe generation.</li>
+            <li><strong>Drawer:</strong> Click on the drawer to refine your recipe choices. Customize your culinary experience by setting dietary preferences, cuisine types, and more.</li>
+            <li><strong>Stove:</strong> Click on the stove icon to open the cookbook. Click the "Generate Recipe" button to generate a recipe and unveil its secrets, including a macronutrient breakdown.</li>
+            <li><strong>Dishwasher:</strong> Need a fresh start? Click on the dishwasher icon to reset all appliances and start over.</li>
+        </ol>
+
+        <h3>Ready to Cook?</h3>
+
+        <p>miKitchen is your gateway to delicious recipes and a world of culinary knowledge. Bon appetit!</p></p>
+</div>
 
 <div class="recipe-modal">
     
@@ -77,7 +112,7 @@
 
 <div id="recipe-page">
     <div class="recipe-container">
-        <button type="button" id="button">Click Me!</button>
+        <button type="button" id="button">Generate Recipe</button>
         <button type="button" id="clearRecipe">Clear</button>
         <ul class="recipe"></ul>
     </div>
@@ -96,9 +131,11 @@
 <div class="drawer-modal"> </div>
     <!-- <button id="closeDrawerModal">Close Modal</button> -->
     <div id="drawer-page">
+    
         <div class="drawer-container">
-            <div>Diet dropdown</div>
-    <button type="button" id="resetButton">reset</button>
+            <button type="button" id="resetButton">reset</button>
+            <h1>Refine Search</h1>
+            <div>Diet</div>
     <select id="diet" name="diet">
         <option value="none" selected disabled hidden>Select an Option</option>
         <option value="balanced">balanced</option>
@@ -108,7 +145,7 @@
         <option value="low-fat">low-fat</option>
         <option value="low-sodium">low-sodium</option>
     </select>
-    <div>Cuisine dropdown</div>
+    <div>Cuisine</div>
     <select id="cuisine" name="cuisine">
         <option value="none" selected disabled hidden>Select an Option</option>
         <option value="American">American</option>
@@ -129,7 +166,7 @@
         <option value="South American">South American</option>
         <option value="South East Asian">South East Asian</option>
     </select>
-    <div>Health dropdown</div>
+    <div>Health</div>
     <select id="health" name="health">
         <option value="none" selected disabled hidden>Select an Option</option>
         <option value="alcohol-free">alcohol-free</option>
@@ -158,7 +195,7 @@
         <option value="vegetarian">vegetarian</option>
         <option value="wheat-free">wheat-free</option>
     </select>
-    <div>Meal type dropdown</div>
+    <div>Meal type</div>
     <select id="mealType" name="mealType">
         <option value="none" selected disabled hidden>Select an Option</option>
         <option value="Dinner">Dinner</option>
@@ -169,7 +206,7 @@
         <option value="low-sodium">low-sodium</option>
     </select>
 
-    <div>Dish Type dropdown</div>
+    <div>Dish Type</div>
     <select id="dishType" name="dishType">
         <option value="none" selected disabled hidden>Select an Option</option>
         <option value="Biscuits and cookies">Biscuits and cookies</option>
@@ -195,100 +232,7 @@
 
 
 
-<!-- <div id="drawer-page" class="hidden">
-    <div>Diet dropdown</div>
-    <select id="diet" name="diet">
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="balanced">balanced</option>
-        <option value="high-fiber">high-fiber</option>
-        <option value="high-protein">high-protein</option>
-        <option value="low-carb">low-carb</option>
-        <option value="low-fat">low-fat</option>
-        <option value="low-sodium">low-sodium</option>
-    </select>
-    <div>Cuisine dropdown</div>
-    <select id="cuisine" name="cuisine">
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="American">American</option>
-        <option value="Asian">Asian</option>
-        <option value="British">British</option>
-        <option value="Caribbean">Caribbean</option>
-        <option value="Central Europe">Central Europe</option>
-        <option value="Chinese">Chinese</option>
-        <option value="Eastern Europe">Eastern Europe</option>
-        <option value="French">French</option>
-        <option value="Indian">Indian</option>
-        <option value="Italian">Italian</option>
-        <option value="Japanese">Japanese</option>
-        <option value="Kosher">Kosher</option>
-        <option value="Mediterannean">Mediterannean</option>
-        <option value="Middle Eastern">Middle Eastern</option>
-        <option value="Nordic">Nordic</option>
-        <option value="South American">South American</option>
-        <option value="South East Asian">South East Asian</option>
-    </select>
-    <div>Health dropdown</div>
-    <select id="health" name="health">
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="alcohol-free">alcohol-free</option>
-        <option value="celery-free">celery-free</option>
-        <option value="crustacean-free">crustacean-free</option>
-        <option value="dairy-free">dairy-free</option>
-        <option value="egg-free">egg-free</option>
-        <option value="fish-free">fish-free</option>
-        <option value="gluten-free">gluten-free</option>
-        <option value="keto">keto</option>
-        <option value="kidney-friendly">kidney-friendly</option>
-        <option value="low-potassium">low-potassium</option>
-        <option value="low-sugar">low-sugar</option>
-        <option value="mollusk-free">mollusk-free</option>
-        <option value="mustard-free">mustard-free</option>
-        <option value="paleo">paleo</option>
-        <option value="peanut-free">peanut-free</option>
-        <option value="pork-free">pork-free</option>
-        <option value="red-meat-free">red-meat-free</option>
-        <option value="sesame-free">sesame-free</option>
-        <option value="shellfish-free">shellfish-free</option>
-        <option value="soy-free">soy-free</option>
-        <option value="sugar-conscious">sugar-conscious</option>
-        <option value="tree-nut-free">tree-nut-free</option>
-        <option value="vegan">vegan</option>
-        <option value="vegetarian">vegetarian</option>
-        <option value="wheat-free">wheat-free</option>
-    </select>
-    <div>Meal type dropdown</div>
-    <select id="mealType" name="mealType">
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="Dinner">Dinner</option>
-        <option value="Lunch">Lunch</option>
-        <option value="Snack">Snack</option>
-        <option value="Teatime">Teatime</option>
-        <option value="Breakfast">Breakfast</option>
-        <option value="low-sodium">low-sodium</option>
-    </select>
 
-    <div>Dish Type dropdown</div>
-    <select id="dishType" name="dishType">
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="Biscuits and cookies">Biscuits and cookies</option>
-        <option value="Bread">Bread</option>
-        <option value="Cereals">Cereals</option>
-        <option value="Condiments and sauces">Condiments and sauces</option>
-        <option value="Desserts">Desserts</option>
-        <option value="Drinks">Drinks</option>
-        <option value="Main course">Main course</option>
-        <option value="Pancake">Pancake</option>
-        <option value="Preps">Preps</option>
-        <option value="Preserve">Preserve</option>
-        <option value="Salad">Salad</option>
-        <option value="Sandwiches">Sandwiches</option>
-        <option value="Side dish">Side dish</option>
-        <option value="Soup">Soup</option>
-        <option value="Starter">Starter</option>
-        <option value="Sweets">Sweets</option>
-    </select>
-    <button type="button" id="resetButton">reset</button>
-</div> -->
 
 </body>
 

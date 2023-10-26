@@ -7,6 +7,9 @@ class Fridge {
         this.ingredientsPage = document.getElementById("ing-page")
         this.ingredientsForm = document.getElementById("ing-form")
         this.ingredientList = document.querySelector('.ingredients');
+        this.userModal = document.getElementsByClassName("user-modal")[0]
+        this.userModal.addEventListener('click', this.closeUserModal.bind(this));
+        this.userPage = document.getElementById("user-page")
         this.ingredientItems = ''
         this.button = document.getElementById("clearButton")
         this.button.addEventListener('click', this.clearIngredients.bind(this))
@@ -26,6 +29,11 @@ class Fridge {
         this.ingredientsModal.style.display = "none"
         this.ingredientsPage.style.display = "none"
     };
+
+    closeUserModal(){
+        this.userModal.style.display = "none"
+        this.userPage.style.display = "none"
+    }
 
     //event handler to add to ingredient list 
     addIngredient(e) {
