@@ -15,7 +15,7 @@ In miKitchen, users will be able to:
 ![drawer page]
 
   
-- Click on the oven to open up a cookbook where users can finally generate a recipe based on the input paramters. 
+- Click on the oven to open up a cookbook where users can finally generate a recipe based on the input paramters. On generation, the user is presented with a random recipe
 
 ![recipe page] 
 
