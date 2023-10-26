@@ -37,7 +37,6 @@ class Oven{
         let recipeList = this.recipe;
         let chartPage = document.getElementById("chart-page")
         let chartList = this.chart
-        debugger
         this.clearRecipes();
 
             let queryParams = this.fridge.ingredientItems + this.drawer.searchParams();
@@ -46,21 +45,14 @@ class Oven{
                 localStorage.setItem("recipes", JSON.stringify(data))
             })
 
-        
             let recipes = JSON.parse(localStorage.getItem("recipes"))
             console.log(recipes)
             let hit = recipes.hits[Math.floor(Math.random() * 20)]
-            debugger
             let recipe = new Recipe(hit);
 
-            // let recipeItem = document.createElement('li');
             let recipeItem = document.createElement('h1');
                 recipeItem.innerText = recipe.label;
                 recipeList.append(recipeItem);
-
-            // let recipeNutrients = document.createElement('li');
-            //     recipeNutrients.innerText = recipe.calories;
-            //     recipeList.append(recipeNutrients);
 
             let recipeImage = document.createElement('img');
                 recipeImage.src = hit.recipe.image;
@@ -75,7 +67,6 @@ class Oven{
                 pieChartContainer.classList.add('pie-chart-container')
                 recipe.generatePieChart(pieChartContainer)
                 recipeList.append(pieChartContainer)
-                // chartPage.append(chartList)
 
             let bubbleHeading = document.createElement("h1")
                 bubbleHeading.innerText = "Nutrient Breakdown"
@@ -86,10 +77,6 @@ class Oven{
                 recipe.generateBubbleChart(bubbleChartContainer)
                 chartList.append(bubbleChartContainer)
                 chartPage.append(chartList)
-
-            
-
-
 
             let tooltipContainer = document.createElement('div')
                 tooltipContainer.innerHTML = `<p id="macro">label</p>
