@@ -8,7 +8,7 @@ In miKitchen, users will be able to:
 
 - Click on the fridge to select ingredients. This feature provides a practical way to simulate the process of gathering ingredients for a recipe.
 
-![fridge_page](./.......) 
+![fridge_page](./ingredientspage.png) 
   
 - Refine their recipe choices by diet, cuisine, health restrictions, and more.
 
