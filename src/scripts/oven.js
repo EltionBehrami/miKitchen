@@ -58,9 +58,9 @@ class Oven{
                 recipeItem.innerText = recipe.label;
                 recipeList.append(recipeItem);
 
-            let recipeNutrients = document.createElement('li');
-                recipeNutrients.innerText = recipe.calories;
-                recipeList.append(recipeNutrients);
+            // let recipeNutrients = document.createElement('li');
+            //     recipeNutrients.innerText = recipe.calories;
+            //     recipeList.append(recipeNutrients);
 
             let recipeImage = document.createElement('img');
                 recipeImage.src = hit.recipe.image;
@@ -75,13 +75,20 @@ class Oven{
                 pieChartContainer.classList.add('pie-chart-container')
                 recipe.generatePieChart(pieChartContainer)
                 recipeList.append(pieChartContainer)
-                chartPage.append(chartList)
+                // chartPage.append(chartList)
+
+            let bubbleHeading = document.createElement("h1")
+                bubbleHeading.innerText = "Nutrient Breakdown"
+                chartList.append(bubbleHeading)
 
             let bubbleChartContainer = document.createElement('div')
                 bubbleChartContainer.classList.add('bubble-chart-container')
                 recipe.generateBubbleChart(bubbleChartContainer)
                 chartList.append(bubbleChartContainer)
                 chartPage.append(chartList)
+
+            
+
 
 
             let tooltipContainer = document.createElement('div')

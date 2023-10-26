@@ -2,7 +2,7 @@ class Recipe {
     constructor(obj) {
         this.label = obj.recipe.label 
         this.img = obj.recipe.image 
-        this.calories = Math.floor(obj.recipe.calories) + " calories"
+        this.calories = Math.floor(obj.recipe.calories / 1.5) + " calories"
         this.protein = Math.floor(obj.recipe.totalNutrients.PROCNT.quantity)
         this.carbs = Math.floor(obj.recipe.totalNutrients.CHOCDF.quantity)
         this.fats = Math.floor(obj.recipe.totalNutrients.FAT.quantity) 
@@ -23,23 +23,23 @@ class Recipe {
 
     generatePieChart(container) {
         const data = [
-            { label: "Protein", value: this.protein },
-            { label: "Carbs", value: this.carbs },
-            { label: "Fats", value: this.fats }
+            { label: "Protein", value: this.protein / 2 },
+            { label: "Carbs", value: this.carbs / 2},
+            { label: "Fats", value: this.fats / 2 }
         ]; 
 
         const width = 250;
         const height = 250;
         const radius = Math.min(width, height) / 2;
 
-        const hoverArc = d3.arc().outerRadius(radius + 10).innerRadius(0)
+        const hoverArc = d3.arc().outerRadius(radius).innerRadius(0)
         const path = d3.arc().outerRadius(radius - 10).innerRadius(0);
 
         // create an SVG for the pie chart within the specified container
         const svg = d3.select(container)
             .append('svg')
-            .attr('width', width + 100)
-            .attr('height', height + 100)
+            .attr('width', width)
+            .attr('height', height)
             .append('g')
             .attr('transform', `translate(${width / 2},${height / 2})`);
 
@@ -68,11 +68,11 @@ class Recipe {
                 .transition().duration(500)
                 .attr('d', hoverArc); 
                 d3.select("#tooltip")
-                .style("left", d3.event.pageX + "px")
-                .style("top", d3.event.pageY + "px")
+                .style("left", (d3.event.pageX - 100 ) + "px")
+                .style("top", (d3.event.pageY - 100 ) + "px")
                 .style("opacity", 1)
                 .select("#value")
-                .text(d.value)
+                .text(`${d.value} grams`)
                 d3.select("#macro")
                 .text(d.data.label)
             })
