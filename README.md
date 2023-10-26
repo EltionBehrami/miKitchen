@@ -73,6 +73,8 @@ In miKitchen, users will be able to:
 
     } ```
 
+- The generateRecipe function is an asynchronous operation that retrieves recipe data based on user input. It begins by initializing variables, clearing existing recipes, and constructing query parameters. It makes an asynchronous request using these parameters and stores the resulting data in local storage for later use. The function then selects a random recipe from the retrieved data and creates a user interface for it, including displaying the recipe's label, image, and a link to the full recipe. Additionally, it generates and displays nutritional information in the form of pie and bubble charts. In summary, the generateRecipe function fetches and presents recipes along with nutritional data to users in a web application, enhancing the user experience with dynamic content and visual representations of nutritional information.
+
   
 - When finished, users can click on the dishwasher to start from scratch.
 
@@ -81,10 +83,6 @@ In addition, this project will include:
 
 - This production README
 - Social media links
-
-## Wireframe 
-
-![wireframe](./wireframe.png)
 
 ## Technology Stack
 
@@ -95,7 +93,7 @@ This project will be implemented with the following technologies:
 - D3 Data Visualization Library
 
 
-## Bonus Features
+## Features in Development 
 
 In addition to the core functionality of the interactive miKitchen, project updates might include:
 
