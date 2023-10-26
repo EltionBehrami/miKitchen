@@ -8,8 +8,16 @@ class Recipe {
         this.fats = Math.floor(obj.recipe.totalNutrients.FAT.quantity) 
 
         this.nutrients = []
-        Object.keys(obj.recipe.totalNutrients).forEach((key) => 
-        this.nutrients.push({name: key, value: obj.recipe.totalNutrients[key].quantity}))
+        // Object.keys(obj.recipe.totalNutrients).forEach((key) => 
+        // this.nutrients.push({name: key, value: obj.recipe.totalNutrients[key].quantity}))
+        Object.keys(obj.recipe.totalNutrients).forEach((key) => {
+            const nutrient = obj.recipe.totalNutrients[key];
+            if (nutrient.unit === "µg") {
+              this.nutrients.push({ name: key, value: nutrient.quantity / 1000 });
+            } else if (nutrient.unit === "mg") {
+              this.nutrients.push({ name: key, value: nutrient.quantity });
+            }
+          });
     }
 
 
