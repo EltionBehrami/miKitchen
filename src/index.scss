@@ -10,8 +10,8 @@ body{
 #first-container {
     display: flex;
     flex-direction: column;
-    // border-style: solid;
-    width: 75%;
+    // border-style: solid 1px pink;
+    // width: 75%;
     z-index: 1;
 }
 
@@ -26,18 +26,18 @@ body{
     background-image: url("../src/assets/Kitchen_furniture_set/Dishwasher_white_open.png");
 }
 
-
-#fridge {
-    // border-style: solid;
+#fridge-container {
+    overflow: hidden;
     height: 857px;
     width: 100%;
     margin-right: 5px;
+}
+#fridge {
     background-image: url("../src/assets/Kitchen_furniture_set/Fridge_gray_2_open_1.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 89%;
     z-index: 1;
-
 }
 
 #fridge:hover{
@@ -685,268 +685,3 @@ body{
         color: #7393B3;
         font-family: cursive;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////
-
-
-// #fridge {
-//     color: purple;
-//     border-style: solid;
-//     padding-top: 400px;
-//     display: flex;
-//     justify-content: right;
-//     align-items: flex-end;
-//     position: fixed;
-//     bottom: 20px;
-//     left: 1475px;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Fridge_gray_2_open_1.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-// }
-
-// #fridge:hover {
-//     background-color: aqua;
-// }
-
-// #tooltip {
-//     position: absolute; 
-//     width: 200px;
-//     height: auto;
-//     padding: 10px;
-//     background-color: rgb(161, 161, 161);
-//     -webkit-border-radius: 10px;
-//     -moz-border-radius: 10px;
-//     border-radius: 10px;
-//     opacity: 0;
-// }
-
-// body{
-//     display: flex;
-//     justify-content: space-evenly;
-//     background-color: #7393B3;
-// }
-
-// .hidden{
-//     display: none;
-// }
-
-// .ing-page{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     border-style: solid;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     background-color: gray;
-// }
-
-// .ingredients {
-//     list-style: none;
-//     border-style: solid;
-// }
-
-// .recipe-page{
-//     display: block;
-//     justify-content: center;
-//     align-items: center;
-//     border-style: solid;
-//     background-color: gray;
-//     position: absolute;
-// }
-
-// .drawer-page {
-//     border-style: solid;
-//     background-color: gray;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-// }
-
-// #drawer{
-//     border-style: solid;
-//     padding-right: 150px;
-//     padding-top: 287px;
-//     display: flex;
-//     justify-content: right;
-//     align-items: flex-end;
-//     position: fixed;
-//     bottom: 20px;
-//     left: 435px;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Cabinet_white_2.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-// }
-
-
-// #oven {
-//     color: purple;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Stove_open.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     display: flex;
-//     justify-content: right;
-//     align-items: end;
-//     border-style: solid;
-//     position: fixed;
-//     bottom: 20px;
-//     left: 50px;
-// }
-
-
-// #oven:hover {
-//     background-color: aqua;
-// }
-
-// #sink-cabinet{
-//     border-style: solid;
-//     padding-right: 300px;
-//     padding-top: 415px;
-//     display: flex;
-//     justify-content: right;
-//     align-items: flex-end;
-//     position: fixed;
-//     bottom: 20px;
-//     left: 743px;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Cabinet_white_4.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-// }
-
-// #sink-top{
-//     border-style: solid;
-//     padding: top 50px;
-//     padding-bottom: 100px;
-//     padding-right: 300px;
-//     display: flex;
-//     justify-content: right;
-//     align-items: flex-end;
-//     position: fixed;
-//     bottom: 440px;
-//     left: 743px;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Sink_1.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-// }
-
-// #sink {
-//     background-color: red;
-// }
-
-// #dishwasher {
-//     border-style: solid;
-//     padding-right: 400px;
-//     padding-top: 415px;
-//     display: flex;
-//     justify-content: right;
-//     align-items: flex-end;
-//     position: fixed;
-//     bottom: 20px;
-//     left: 1050px;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Dishwasher_white_close.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-// }
-
-// #hood {
-//     border-style: solid;
-//     padding-right: 400px;
-//     padding-top: 415px;
-//     display: flex;
-//     justify-content: right;
-//     align-items: flex-end;
-//     position: fixed;
-//     top: 20px;
-//     left: 95px;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Range_hood_3.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     padding-left: 150px;
-//     padding-right: 150px;
-//     padding-bottom: 65px;
-//     padding-top: 200px;
-// }
-
-// #cabinet {
-//     border-style: solid;
-//     padding-right: 400px;
-//     padding-top: 415px;
-//     display: flex;
-//     justify-content: right;
-//     align-items: flex-end;
-//     position: fixed;
-//     top: 20px;
-//     left: 435px;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Cupboard_white_1.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     padding-left: 200px;
-//     padding-right: 150px;
-//     padding-bottom: 150px;
-//     padding-top: 200px;
-// }
-// #cabinetTwo {
-//     border-style: solid;
-//     padding-right: 400px;
-//     padding-top: 415px;
-//     display: flex;
-//     justify-content: right;
-//     align-items: flex-end;
-//     position: fixed;
-//     top: 20px;
-//     left: 790px;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Cupboard_white_1.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     padding-left: 200px;
-//     padding-right: 150px;
-//     padding-bottom: 150px;
-//     padding-top: 200px;
-// }
-// #cabinetThree {
-//     border-style: solid;
-//     padding-right: 400px;
-//     padding-top: 415px;
-//     display: flex;
-//     justify-content: right;
-//     align-items: flex-end;
-//     position: fixed;
-//     top: 20px;
-//     left: 1145px;
-//     background-image: url("/src/assets/Kitchen_furniture_set/Cupboard_white_1.png");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     padding-left: 200px;
-//     padding-right: 150px;
-//     padding-bottom: 150px;
-//     padding-top: 200px;
-// }
-
-
-
-
-
