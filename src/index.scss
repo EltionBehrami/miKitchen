@@ -26,17 +26,17 @@ body{
     background-image: url("../src/assets/Kitchen_furniture_set/Dishwasher_white_open.png");
 }
 
-#fridge-container {
-    overflow: hidden;
+
+#fridge {
+    // border-style: solid;
     height: 857px;
     width: 100%;
     margin-right: 5px;
-}
-#fridge {
     background-image: url("../src/assets/Kitchen_furniture_set/Fridge_gray_2_open_1.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 89%;
+    // transform: scaleX(-1);
     z-index: 1;
 }
 
